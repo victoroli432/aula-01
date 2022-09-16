@@ -3,9 +3,9 @@ import pandas as pd
 import altair as alt
 from urllib.error import URLError
 
-r = requests.get('https://docs.google.com/spreadsheets/d/e/2PACX-1vTjhdfDYTI3HNP0wpxBAp_YePhfyBj9GlLAmFgW2zUsTQiWJwkY_iUvVuhiT9AD2X81uJQalB89rYlw/pub?gid=2112212887&single=true&output=csv')
+r = requests.get('https://github.com/victoroli432/aula-01/blob/main/Base%20de%20dados.xlsx?raw=true')
 DB = r.content
 df = pd.read_csv(BytesIO(DB), index_col=0)
-df.columns = ['Curso', 'Nome', 'CPF', 'Endereco', 'Telefone', 'e-mail']
+df.columns = ['Estado-sigla', 'Municipio', 'Revenda', 'Nome da Rua', 'Bairro', 'CEP', 'Produto', 'Data da Coleta', 'Valor de Venda', 'Unidade de Medida', 'Bandeira']
 curso = df['Curso']
 nome = df['Nome']
